@@ -103,7 +103,7 @@
                                 <property name="gcc.extra.args" value=""/>
 
                                 <echo message="Compiling native library..."/>
-                                <echoproperties />
+
                                 <mkdir dir="${build.dir}/native"/>
 
                                 <pathconvert property="src.native" pathsep=" ">
@@ -139,7 +139,8 @@
                 <version>3.0.2</version>
                 <configuration>
                     <includes>
-                        <include>../build_native/native/libonenio.so</include>
+                        <include>**/*.class</include>
+                        <include>*.so</include>
                     </includes>
                 </configuration>
             </plugin>
