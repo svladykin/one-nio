@@ -117,7 +117,7 @@
                                                ${src.native} -lssl -lrt"/>
                                 </exec>
 
-                                <move file="${build.dir}/native/libonenio.so" todir="${build.dir}/classes"/>
+                                <move verbose="true" file="${build.dir}/native/libonenio.so" todir="${build.dir}/classes"/>
                             </target>
                         </configuration>
                         <goals>
