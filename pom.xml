@@ -89,17 +89,6 @@
         <testSourceDirectory>test</testSourceDirectory>
         <plugins>
             <plugin>
-                <artifactId>maven-clean-plugin</artifactId>
-                <version>3.0.0</version>
-                <configuration>
-                    <filesets>
-                        <fileset>
-                            <directory>build_native</directory>
-                        </fileset>
-                    </filesets>
-                </configuration>
-            </plugin>
-            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-antrun-plugin</artifactId>
                 <version>1.8</version>
@@ -108,14 +97,13 @@
                         <id>compile-native</id>
                         <phase>compile</phase>
                         <configuration>
-                            <property name="build.dir"      value="build_native"/>
-                            <property name="src.dir"        value="src"/>
-                            <property name="gcc.extra.args" value=""/>
-
                             <target name="compile-native">
+                                <property name="build.dir"      value="target"/>
+                                <property name="src.dir"        value="src"/>
+                                <property name="gcc.extra.args" value=""/>
+
                                 <echo message="Compiling native library..."/>
-                                <delete dir="${build.dir}"/>
-                                <mkdir dir="${build.dir}"/>
+                                <echoproperties />
                                 <mkdir dir="${build.dir}/native"/>
 
                                 <pathconvert property="src.native" pathsep=" ">
