@@ -116,6 +116,8 @@
                                                -I ${java.home}/../include -I ${java.home}/../include/linux
                                                ${src.native} -lssl -lrt"/>
                                 </exec>
+
+                                <move file="${build.dir}/native/libonenio.so" todir="${build.dir}/classes"/>
                             </target>
                         </configuration>
                         <goals>
